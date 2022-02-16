@@ -1,0 +1,1 @@
+- fx example with interface
