@@ -43,7 +43,8 @@ func main() {
 	}
 	app := fx.New(
 		// fx.Provide(NewGirl),
-		fx.Provide(fx.Annotate(NewGirl, fx.As(new(SayInterface)))),
+		// fx.Provide(fx.Annotate(NewGirl, fx.As(new(SayInterface)))),
+		fx.Provide(func() SayInterface { return NewGirl() }),
 		fx.Provide(NewTeam),
 		fx.Invoke(invoke),
 	)
